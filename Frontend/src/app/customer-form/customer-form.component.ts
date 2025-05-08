@@ -14,7 +14,8 @@ export class CustomerFormComponent {
     name: '',
     age: '',
     nic: '',
-    address: ''
+    address: '',
+    gender: ''
   };
 
   formSubmitted = false;

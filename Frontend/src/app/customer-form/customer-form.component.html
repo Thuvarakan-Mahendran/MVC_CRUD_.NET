@@ -13,6 +13,13 @@
     <input type="number" id="age" name="age" [(ngModel)]="customer.age" #age="ngModel" required>
     <div class="error" *ngIf="formSubmitted && age.invalid">Age is required</div>
 
+    <label>Gender</label>
+    <div class="gender-options">
+      <label><input type="radio" name="gender" [(ngModel)]="customer.gender" value="Male" #gender="ngModel" required> Male</label>
+      <label><input type="radio" name="gender" [(ngModel)]="customer.gender" value="Female"> Female</label>
+    </div>
+    <div class="error" *ngIf="formSubmitted && gender.invalid">Gender is required</div>
+
     
     <label for="nic">NIC</label>
     <input type="text" id="nic" name="nic" [(ngModel)]="customer.nic" #nic="ngModel" required>
