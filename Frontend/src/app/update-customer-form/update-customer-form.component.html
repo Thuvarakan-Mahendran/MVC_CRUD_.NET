@@ -1,7 +1,9 @@
 <div class="form-container">
     <h2>Update Customer Form</h2>
     <form #customerForm="ngForm" (ngSubmit)="onSubmit(customerForm)" novalidate>
-  
+      <label for="name">ID</label>
+      <input type="text" id="name" name="name" [(ngModel)]="customer.id" #id="ngModel" disabled>
+
       <label for="name">Name</label>
       <input type="text" id="name" name="name" [(ngModel)]="customer.name" #name="ngModel" required>
   
@@ -15,7 +17,7 @@
       <input type="text" id="address" name="address" [(ngModel)]="customer.address" #address="ngModel" required>
       
   
-      <button type="submit">Submit</button>
+      <button type="submit">Update</button>
     </form>
   </div>
   

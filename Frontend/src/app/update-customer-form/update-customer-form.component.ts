@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class UpdateCustomerFormComponent {
   customer = {
+      id: '',
       name: '',
       age: '',
       nic: '',

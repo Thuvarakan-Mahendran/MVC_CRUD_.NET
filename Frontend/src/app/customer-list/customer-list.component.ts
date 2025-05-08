@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-list',
@@ -10,6 +11,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './customer-list.component.css'
 })
 export class CustomerListComponent {
+  constructor(private router: Router) {}
   customer = [
     { id: 1, name: 'John Doe', age: '10', nic: '123456789V', address: '123 Main St' },
     { id: 2, name: 'Jane Smith', age: '20', nic: '987654321V', address: '456 Elm St' },
@@ -57,5 +59,12 @@ export class CustomerListComponent {
     } else {
       this.onItemsPerPageChange();
     }
+  }
+
+  editCustomer(customer: any) {
+    // Example: open a modal or navigate to edit form
+    console.log('Edit customer:', customer);
+    // You can use Angular Router for navigation:
+    this.router.navigate(['/edit', customer.id]);
   }
 }
