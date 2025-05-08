@@ -6,7 +6,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-customer-form',
   standalone: true,
   templateUrl: './customer-form.component.html',
-  styleUrl: './customer-form.component.css'
+  styleUrl: './customer-form.component.css',
+  imports: [CommonModule, FormsModule]
 })
 export class CustomerFormComponent {
   customer = {
