@@ -62,7 +62,7 @@ button:hover {
 
 .gender-options {
   display: flex;  
-  gap: 15px;      
+  gap: 15px;    
   align-items: center;
 }
 
