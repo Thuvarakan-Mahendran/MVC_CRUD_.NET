@@ -1,1 +1,57 @@
-<p>customer-list works!</p>
+
+<body>
+
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <div>
+      <label>
+        <select class="form-select form-select-sm w-auto">
+          <option>5</option>
+          <option>10</option>
+          <option>25</option>
+        </select>
+        entries per page
+      </label>
+    </div>
+    <div>
+      <input type="text" class="form-control form-control-sm" placeholder="Search">
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>NIC</th>
+          <th>Gender</th>
+          <th>Address</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customerList">
+            <td>{{customer.id}}</td>
+            <td>{{customer.name}}</td>
+            <td>{{customer.age}}</td>
+            <td>{{customer.nic}}</td>
+            <td>{{customer.gender}}</td>
+            <td>{{customer.address}}</td>
+            <td class="action-btns">
+                <button class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></button>
+                <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+            </td>
+        </tr>  
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Bootstrap Icons CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
