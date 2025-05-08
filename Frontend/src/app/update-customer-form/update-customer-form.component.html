@@ -8,12 +8,6 @@
       <label for="age">Age</label>
       <input type="number" id="age" name="age" [(ngModel)]="customer.age" #age="ngModel" required>
   
-      <label>Gender</label>
-      <div class="gender-options">
-        <label><input type="radio" name="gender" [(ngModel)]="customer.gender" value="Male" #gender="ngModel" required> Male</label>
-        <label><input type="radio" name="gender" [(ngModel)]="customer.gender" value="Female"> Female</label>
-      </div>
-  
       <label for="nic">NIC</label>
       <input type="text" id="nic" name="nic" [(ngModel)]="customer.nic" #nic="ngModel" required>
     

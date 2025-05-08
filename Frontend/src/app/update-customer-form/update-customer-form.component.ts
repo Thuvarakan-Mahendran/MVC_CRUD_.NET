@@ -14,8 +14,7 @@ export class UpdateCustomerFormComponent {
       name: '',
       age: '',
       nic: '',
-      address: '',
-      gender: ''
+      address: ''
     };
   
     formSubmitted = false;
