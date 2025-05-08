@@ -60,17 +60,4 @@ button:hover {
   margin-top: 4px;
 }
 
-.gender-options {
-  display: flex;  
-  gap: 15px;      
-  align-items: center;
-}
 
-.gender-options label {
-  display: flex;
-  align-items: center;
-}
-
-.gender-options input[type="radio"] {
-  margin-right: 5px; 
-}
