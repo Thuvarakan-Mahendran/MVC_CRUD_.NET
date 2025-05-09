@@ -5,16 +5,19 @@
   <div class="d-flex justify-content-between align-items-center mb-3">
     <div>
       <label>
-        <select class="form-select form-select-sm w-auto">
-          <option>5</option>
-          <option>10</option>
-          <option>25</option>
+        <select class="form-select form-select-sm w-auto" [(ngModel)]="itemsPerPage" (change)="onItemsPerPageChange()">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>          
+          <option value="all">All</option>
         </select>
         entries per page
       </label>
     </div>
     <div>
-      <input type="text" class="form-control form-control-sm" placeholder="Search">
+      <input type="text" class="form-control form-control-sm" placeholder="Search" [(ngModel)]="searchTerm" (input)="onSearch()" aria-label="Search">
     </div>
   </div>
 
@@ -26,7 +29,6 @@
           <th>Name</th>
           <th>Age</th>
           <th>NIC</th>
-          <th>Gender</th>
           <th>Address</th>
           <th>Action</th>
         </tr>
@@ -37,10 +39,9 @@
             <td>{{customer.name}}</td>
             <td>{{customer.age}}</td>
             <td>{{customer.nic}}</td>
-            <td>{{customer.gender}}</td>
             <td>{{customer.address}}</td>
             <td class="action-btns">
-                <button class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i></button>
+                <button class="btn btn-primary btn-sm" (click)="editCustomer(customer)"><i class="bi bi-pencil-square" ></i></button>
                 <button class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
             </td>
         </tr>  

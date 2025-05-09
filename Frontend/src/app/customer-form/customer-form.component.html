@@ -1,23 +1,23 @@
 <div class="form-container">
-    <h2>Customer Form</h2>
-    <form (ngSubmit)="onSubmit()" #customerForm="ngForm">
-      
-      <label for="id">ID</label>
-      <input type="text" id="id" name="id" [(ngModel)]="customer.id" required>
-  
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" [(ngModel)]="customer.name" required>
-  
-      <label for="age">Age</label>
-      <input type="number" id="age" name="age" [(ngModel)]="customer.age" required>
-  
-      <label for="nic">NIC</label>
-      <input type="text" id="nic" name="nic" [(ngModel)]="customer.nic" required>
-  
-      <label for="address">Address</label>
-      <input type="text" id="address" name="address" [(ngModel)]="customer.address" required>
-  
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-  
+  <h2>Customer Form</h2>
+  <form #customerForm="ngForm" (ngSubmit)="onSubmit(customerForm)" novalidate>
+
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" [(ngModel)]="customer.name" #name="ngModel" required>
+    <div class="error" *ngIf="formSubmitted && name.invalid">Name is required</div>
+
+    <label for="age">Age</label>
+    <input type="number" id="age" name="age" [(ngModel)]="customer.age" #age="ngModel" required>
+    <div class="error" *ngIf="formSubmitted && age.invalid">Age is required</div>
+
+    <label for="nic">NIC</label>
+    <input type="text" id="nic" name="nic" [(ngModel)]="customer.nic" #nic="ngModel" required>
+    <div class="error" *ngIf="formSubmitted && nic.invalid">NIC is required</div>
+
+    <label for="address">Address</label>
+    <input type="text" id="address" name="address" [(ngModel)]="customer.address" #address="ngModel" required>
+    <div class="error" *ngIf="formSubmitted && address.invalid">Address is required</div>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
