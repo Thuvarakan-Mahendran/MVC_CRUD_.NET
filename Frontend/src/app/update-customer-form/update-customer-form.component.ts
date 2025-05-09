@@ -37,7 +37,7 @@ export class UpdateCustomerFormComponent {
   
       console.log('Form submitted:', this.customer);
   
-       alert('Customer added successfully');
+       alert('Customer Updated successfully');
   
       form.resetForm();
       this.formSubmitted = false;
