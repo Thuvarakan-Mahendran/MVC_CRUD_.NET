@@ -28,3 +28,4 @@ Thumbs.db
 
 # Local Test Settings
 *.DotSettings.user
+Backend/MVC_Crud/appsettings.json
