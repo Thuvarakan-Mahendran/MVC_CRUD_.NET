@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CustomerService } from '../Services/customer.service';
 
 @Component({
   selector: 'app-customer-list',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrl: './customer-list.component.css'
 })
 export class CustomerListComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private customerService: CustomerService) {}
   customer = [
     { id: 1, name: 'John Doe', age: '10', nic: '123456789V', address: '123 Main St' },
     { id: 2, name: 'Jane Smith', age: '20', nic: '987654321V', address: '456 Elm St' },
@@ -64,6 +65,7 @@ export class CustomerListComponent {
   editCustomer(customer: any) {
     // Example: open a modal or navigate to edit form
     console.log('Edit customer:', customer);
+    this.customerService.setCustomer(customer);
     // You can use Angular Router for navigation:
     this.router.navigate(['/edit', customer.id]);
   }

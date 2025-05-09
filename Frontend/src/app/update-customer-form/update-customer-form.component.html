@@ -2,7 +2,7 @@
     <h2>Update Customer Form</h2>
     <form #customerForm="ngForm" (ngSubmit)="onSubmit(customerForm)" novalidate>
       <label for="name">ID</label>
-      <input type="text" id="name" name="name" [(ngModel)]="customer.id" #id="ngModel" disabled>
+      <input type="text" id="id" name="id" [(ngModel)]="customer.id" #id="ngModel" disabled>
 
       <label for="name">Name</label>
       <input type="text" id="name" name="name" [(ngModel)]="customer.name" #name="ngModel" required>
